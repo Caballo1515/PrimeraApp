@@ -1,4 +1,4 @@
-package com.example.primeraapp;
+package cat.urv.deim;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.primeraapp", appContext.getPackageName());
+        assertEquals("com.urv.deim", appContext.getPackageName());
     }
 }

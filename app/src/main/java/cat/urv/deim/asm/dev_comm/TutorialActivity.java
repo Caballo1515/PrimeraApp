@@ -1,4 +1,4 @@
-package com.example.primeraapp;
+package cat.urv.deim.asm.dev_comm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import cat.urv.deim.asm.dev_comm.R;
+
+import cat.urv.deim.asm.dev_comm.LoginActivity;
 
 public class TutorialActivity extends AppCompatActivity {
 

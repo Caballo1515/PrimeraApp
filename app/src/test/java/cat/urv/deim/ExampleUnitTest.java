@@ -1,4 +1,4 @@
-package com.example.primeraapp;
+package cat.urv.deim;
 
 import org.junit.Test;
 

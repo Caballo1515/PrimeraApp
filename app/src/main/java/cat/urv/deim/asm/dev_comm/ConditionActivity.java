@@ -1,8 +1,10 @@
-package com.example.primeraapp;
+package cat.urv.deim.asm.dev_comm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import cat.urv.deim.asm.dev_comm.R;
 
 public class ConditionActivity extends AppCompatActivity {
 

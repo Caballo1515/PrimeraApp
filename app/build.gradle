@@ -6,7 +6,7 @@ android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "com.example.primeraapp"
+        applicationId "cat.urv.deim.asm.dev_comm"
         minSdkVersion 29
         targetSdkVersion 29
         versionCode 1

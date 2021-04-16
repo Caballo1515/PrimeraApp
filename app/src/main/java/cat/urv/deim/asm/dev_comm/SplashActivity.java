@@ -1,14 +1,16 @@
-package com.example.primeraapp;
+package cat.urv.deim.asm.dev_comm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class LoginActivity extends AppCompatActivity {
+import cat.urv.deim.asm.dev_comm.R;
+
+public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity_layout);
+        setContentView(R.layout.splash_activity);
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.primeraapp">
+    package="cat.urv.deim.asm.dev_comm">
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeraApp">
-        <activity android:name=".ConditionActivity"></activity>
+        <activity android:name="cat.urv.deim.asm.dev_comm.ConditionActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity
-            android:name=".TutorialActivity"
+            android:name="cat.urv.deim.asm.dev_comm.TutorialActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +23,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="cat.urv.deim.asm.dev_comm.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashActivity"
+            android:name="cat.urv.deim.asm.dev_comm.SplashActivity"
             android:screenOrientation="portrait" />
     </application>
 
