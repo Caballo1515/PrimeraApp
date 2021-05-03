@@ -9,12 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeraApp">
-        <activity android:name="cat.urv.deim.asm.dev_comm.ConditionActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
         <activity
-            android:name="cat.urv.deim.asm.dev_comm.TutorialActivity"
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/Theme.PrimeraApp.NoActionBar"></activity>
+        <activity
+            android:name=".ConditionActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".TutorialActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,10 +27,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="cat.urv.deim.asm.dev_comm.LoginActivity"
+            android:name=".LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cat.urv.deim.asm.dev_comm.SplashActivity"
+            android:name=".SplashActivity"
             android:screenOrientation="portrait" />
     </application>
 
