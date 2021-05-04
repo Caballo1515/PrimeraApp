@@ -3,6 +3,7 @@
     package="cat.urv.deim.asm.dev_comm">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeraApp">
+        <activity android:name=".NewsDetailActivity"></activity>
+        <activity android:name=".ui.prueba.NewsDetailActivity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/Theme.PrimeraApp.NoActionBar"></activity>
+            android:theme="@style/Theme.PrimeraApp.NoActionBar" />
         <activity
             android:name=".ConditionActivity"
-            android:screenOrientation="portrait"></activity>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TutorialActivity"
             android:screenOrientation="portrait">
