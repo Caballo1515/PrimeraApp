@@ -19,4 +19,6 @@
     <string name="button">Button</string>
     <string name="button1">Button</string>
     <string name="todo">TODO</string>
+    <string name="dialog_fire_missiles" />
+    <string name="fire" />
 </resources>
