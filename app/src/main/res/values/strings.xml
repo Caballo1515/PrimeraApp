@@ -14,4 +14,9 @@
     <string name="menu_speakers">Speakers</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_preferences">Preferences</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button">Button</string>
+    <string name="button1">Button</string>
+    <string name="todo">TODO</string>
 </resources>

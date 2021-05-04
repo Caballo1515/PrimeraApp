@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cat.urv.deim.asm.dev_comm">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeraApp">
         <activity android:name=".NewsDetailActivity"></activity>
-        <activity android:name=".ui.prueba.NewsDetailActivity" />
+        <activity android:name=".ui.prueba.NewsDetailActivity"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
