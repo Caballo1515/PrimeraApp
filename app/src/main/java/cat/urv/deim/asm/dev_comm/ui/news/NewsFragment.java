@@ -5,15 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
+import cat.urv.deim.asm.dev_comm.ConditionActivity;
 import cat.urv.deim.asm.dev_comm.NewsDetailActivity;
 import cat.urv.deim.asm.dev_comm.R;
 
@@ -21,16 +17,40 @@ public class NewsFragment extends Fragment {
 
     private NewsViewModel newsViewModel;
 
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_news, container, false);
-        TextView title1 = (TextView) view.findViewById(R.id.title1);
-        title1.setOnClickListener(new View.OnClickListener(){
+
+
+        View f1 = view.findViewById(R.id.fragment8);
+        View f2 = view.findViewById(R.id.fragment6);
+        View f3 = view.findViewById(R.id.fragment7);
+
+        f1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(getActivity(), NewsDetailActivity.class);
-                startActivity(in);
+                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                startActivity(intent);
             }
-    });
+        });
+        f2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+        f3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         return view;
-}
+    }
 }
