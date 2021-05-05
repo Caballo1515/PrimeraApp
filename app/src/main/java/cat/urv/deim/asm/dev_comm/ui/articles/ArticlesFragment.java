@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import cat.urv.deim.asm.dev_comm.ArticlesDetailActivity;
 import cat.urv.deim.asm.dev_comm.NewsDetailActivity;
 import cat.urv.deim.asm.dev_comm.R;
 
@@ -31,21 +32,21 @@ public class ArticlesFragment extends Fragment {
         f1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                Intent intent = new Intent(getActivity(), ArticlesDetailActivity.class);
                 startActivity(intent);
             }
         });
         f2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                Intent intent = new Intent(getActivity(), ArticlesDetailActivity.class);
                 startActivity(intent);
             }
         });
         f3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                Intent intent = new Intent(getActivity(), ArticlesDetailActivity.class);
                 startActivity(intent);
             }
         });

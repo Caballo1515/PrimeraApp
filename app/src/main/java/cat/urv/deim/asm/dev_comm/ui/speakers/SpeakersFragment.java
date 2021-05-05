@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import cat.urv.deim.asm.dev_comm.NewsDetailActivity;
 import cat.urv.deim.asm.dev_comm.R;
+import cat.urv.deim.asm.dev_comm.SpeakerDetailActivity;
 
 public class SpeakersFragment extends Fragment {
 
@@ -31,21 +32,21 @@ public class SpeakersFragment extends Fragment {
         f1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                Intent intent = new Intent(getActivity(), SpeakerDetailActivity.class);
                 startActivity(intent);
             }
         });
         f2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                Intent intent = new Intent(getActivity(), SpeakerDetailActivity.class);
                 startActivity(intent);
             }
         });
         f3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                Intent intent = new Intent(getActivity(), SpeakerDetailActivity.class);
                 startActivity(intent);
             }
         });
