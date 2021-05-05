@@ -9,7 +9,7 @@ import cat.urv.deim.asm.dev_comm.R;
 
 public class ConditionActivity extends AppCompatActivity {
 
-    String url = "https://www.youtube.com/";
+    String url = "https://campusvirtual.urv.cat/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

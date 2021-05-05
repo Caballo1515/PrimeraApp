@@ -29,14 +29,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10px"
-                android:text="TextView" />
+                android:text="TITLE" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="116dp"
                 android:layout_margin="10px"
-                android:text="asdffffffffffffffffffffffffffffffffffffffffffffffffffffasdfasdfasdfasdfasdfasdfasdsaffffffffdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfd" />
+                android:text="Els noms de les constants, arxius, classes i variables han de seguir el estàndard de codificació
+anomenat Google Java Style Guide (https://google.github.io/styleguide/javaguide.html).
+El color principal o primari de l’aplicació és #699CFC, és a dir, allà on s’indiqui que el component
+és de color blau s’ha d’utilitzar aquest color concretament.
+L’aplicació ha estat dissenyada per ser visualitzada en mode light, per tant, el background s’ha de
+definir com a color white estàndard a l’Android Studio." />
         </LinearLayout>
     </LinearLayout>
 
