@@ -21,14 +21,16 @@
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/image1"
-            android:contentDescription="@string/todo" />
+            android:layout_margin="50dp"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/image1" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment2"
             android:name="cat.urv.deim.asm.dev_comm.Tutorial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             tools:layout="@layout/fragment_tutorial" />
 
         <androidx.fragment.app.FragmentContainerView
@@ -36,6 +38,7 @@
             android:name="cat.urv.deim.asm.dev_comm.Tutorial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             tools:layout="@layout/fragment_tutorial" />
 
         <androidx.fragment.app.FragmentContainerView
@@ -43,12 +46,14 @@
             android:name="cat.urv.deim.asm.dev_comm.Tutorial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             tools:layout="@layout/fragment_tutorial" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment5"
             android:name="cat.urv.deim.asm.dev_comm.Tutorial"
             android:layout_width="match_parent"
+            android:layout_margin="10dp"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
@@ -68,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/button"
+            android:text="NEXT"
             android:visibility="visible" />
 
         <Button
@@ -76,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/button" />
+            android:text="SKIP" />
 
     </LinearLayout>
 
