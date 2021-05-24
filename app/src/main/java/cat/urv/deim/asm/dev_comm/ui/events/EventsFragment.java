@@ -12,8 +12,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
+import cat.urv.deim.asm.dev_comm.AdapterListasNAE;
 import cat.urv.deim.asm.dev_comm.EventDetailActivity;
+import cat.urv.deim.asm.dev_comm.ItempNAE;
 import cat.urv.deim.asm.dev_comm.NewsDetailActivity;
 import cat.urv.deim.asm.dev_comm.R;
 
@@ -21,35 +27,25 @@ public class EventsFragment extends Fragment {
 
     private EventsViewModel eventsViewModel;
 
+    ArrayList<ItempNAE> lista= new ArrayList<>();
+    RecyclerView recycler;
+    ItempNAE item;
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         eventsViewModel = new ViewModelProvider(this).get(EventsViewModel.class);
         View view = inflater.inflate(R.layout.fragment_events, container, false);
 
-        View f1 = view.findViewById(R.id.fragment8);
-        View f2 = view.findViewById(R.id.fragment6);
-        View f3 = view.findViewById(R.id.fragment7);
+        recycler=view.findViewById(R.id.lista_events);
+        recycler.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false));
 
-        f1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), EventDetailActivity.class);
-                startActivity(intent);
-            }
-        });
-        f2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), EventDetailActivity.class);
-                startActivity(intent);
-            }
-        });
-        f3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), EventDetailActivity.class);
-                startActivity(intent);
-            }
-        });
+        for (int i=1; i<5; i++){
+            item = new ItempNAE(R.drawable.image1, i+ ".EVENTS", "asdf asdfasdfsadf sadfasdfsadf  asdfasdfsadf asdfasdf asdf", "10/05/21");
+            lista.add(item);
+        }
+
+        AdapterListasNAE adaptador= new AdapterListasNAE(lista);
+        recycler.setAdapter(adaptador);
+
 
 
         return view;

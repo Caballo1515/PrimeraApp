@@ -1,6 +1,5 @@
 package cat.urv.deim.asm.dev_comm.ui.news;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,49 +7,42 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import cat.urv.deim.asm.dev_comm.ConditionActivity;
-import cat.urv.deim.asm.dev_comm.NewsDetailActivity;
+import java.util.ArrayList;
+
+import cat.urv.deim.asm.dev_comm.AdapterListasNAE;
+import cat.urv.deim.asm.dev_comm.ItempNAE;
 import cat.urv.deim.asm.dev_comm.R;
 
 public class NewsFragment extends Fragment {
 
-    private NewsViewModel newsViewModel;
-
+    ArrayList<ItempNAE> lista= new ArrayList<>();
+    RecyclerView recycler;
+    ItempNAE item;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_news, container, false);
 
+        recycler=view.findViewById(R.id.lista_news);
+        recycler.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false));
 
-        View f1 = view.findViewById(R.id.fragment8);
-        View f2 = view.findViewById(R.id.fragment6);
-        View f3 = view.findViewById(R.id.fragment7);
+        for (int i=1; i<5; i++){
+            item = new ItempNAE(R.drawable.image1, i+ ".NEWS", "asdf asdfasdfsadf sadfasdfsadf  asdfasdfsadf asdfasdf asdf", "10/05/21");
+            lista.add(item);
+        }
 
-        f1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
-                startActivity(intent);
-            }
-        });
-        f2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
-                startActivity(intent);
-            }
-        });
-        f3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
-                startActivity(intent);
-            }
-        });
+        AdapterListasNAE adaptador= new AdapterListasNAE(lista);
+        recycler.setAdapter(adaptador);
 
 
 
         return view;
+
+
     }
+
+
 }
