@@ -18,6 +18,7 @@ public class TutorialActivity extends AppCompatActivity {
     private View f1, f2, f3, f4;
     private int contador;
 
+
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
