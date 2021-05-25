@@ -16,12 +16,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cat.urv.deim.asm.dev_comm.AdapterListasNAE;
 import cat.urv.deim.asm.dev_comm.ArticlesDetailActivity;
 import cat.urv.deim.asm.dev_comm.ItempNAE;
 import cat.urv.deim.asm.dev_comm.NewsDetailActivity;
 import cat.urv.deim.asm.dev_comm.R;
+import cat.urv.deim.asm.libraries.contentcommdev.models.Article;
+import cat.urv.deim.asm.libraries.contentcommdev.providers.ContentUtils;
 
 public class ArticlesFragment extends Fragment {
 
@@ -35,13 +38,23 @@ public class ArticlesFragment extends Fragment {
         articlesViewModel = new ViewModelProvider(this).get(ArticlesViewModel.class);
         View view = inflater.inflate(R.layout.fragment_articles, container, false);
 
+        ContentUtils contentUtils = ContentUtils.getInstance(view.getContext());
+        List<Article> articles = contentUtils.getArticles();
+        for (int i=0; i<articles.size(); i++){
+            item = new ItempNAE(R.drawable.image1, articles.get(i).getTitle(), articles.get(i).getText(), articles.get(i).getDate());
+            lista.add(item);
+        }
+
         recycler=view.findViewById(R.id.lista_articles);
         recycler.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false));
 
+        /*
         for (int i=1; i<5; i++){
             item = new ItempNAE(R.drawable.image1, i+ ".ARTICLES", "asdf asdfasdfsadf sadfasdfsadf  asdfasdfsadf asdfasdf asdf", "10/05/21");
             lista.add(item);
         }
+        */
+
 
         AdapterListasNAE adaptador= new AdapterListasNAE(lista, ArticlesDetailActivity.class);
         recycler.setAdapter(adaptador);

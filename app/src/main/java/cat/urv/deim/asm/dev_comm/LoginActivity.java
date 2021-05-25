@@ -20,6 +20,8 @@ import android.widget.Button;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
+import cat.urv.deim.asm.libraries.usercommdev.utils.UserUtils;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -59,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
             startActivity(intent);
         }
-
 
 
 
