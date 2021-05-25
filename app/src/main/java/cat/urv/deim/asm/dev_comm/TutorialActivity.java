@@ -3,7 +3,9 @@ package cat.urv.deim.asm.dev_comm;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +18,23 @@ public class TutorialActivity extends AppCompatActivity {
     private View f1, f2, f3, f4;
     private int contador;
 
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tutorial_activity_layout);
+
+        sharedPreferences = this.getPreferences(Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        if (this.sharedPreferences.getBoolean("hecho", false)){
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
 
         f1 = this.findViewById(R.id.fragment2);
         f1.setVisibility(View.INVISIBLE);
@@ -30,7 +45,14 @@ public class TutorialActivity extends AppCompatActivity {
         f4 = this.findViewById(R.id.fragment5);
         f4.setVisibility(View.INVISIBLE);
 
+
+        editor.putBoolean("hecho", true);
+        editor.apply();
+
         contador=0;
+
+
+
     }
 
 
@@ -81,4 +103,9 @@ public class TutorialActivity extends AppCompatActivity {
         });
 
     }
+
+    public void hecho(boolean hecho){
+
+    }
+
 }
