@@ -43,7 +43,7 @@ public class SpeakersFragment extends Fragment {
             lista.add(item);
         }
 
-        AdapterListasNAE adaptador= new AdapterListasNAE(lista);
+        AdapterListasNAE adaptador= new AdapterListasNAE(lista, SpeakerDetailActivity.class);
         recycler.setAdapter(adaptador);
 
         return view;

@@ -43,7 +43,7 @@ public class ArticlesFragment extends Fragment {
             lista.add(item);
         }
 
-        AdapterListasNAE adaptador= new AdapterListasNAE(lista);
+        AdapterListasNAE adaptador= new AdapterListasNAE(lista, ArticlesDetailActivity.class);
         recycler.setAdapter(adaptador);
 
 

@@ -43,7 +43,7 @@ public class EventsFragment extends Fragment {
             lista.add(item);
         }
 
-        AdapterListasNAE adaptador= new AdapterListasNAE(lista);
+        AdapterListasNAE adaptador= new AdapterListasNAE(lista, EventDetailActivity.class);
         recycler.setAdapter(adaptador);
 
 
