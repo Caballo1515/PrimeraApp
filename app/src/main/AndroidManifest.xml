@@ -16,9 +16,7 @@
         <activity android:name=".EventDetailActivity" />
         <activity android:name=".ArticlesDetailActivity" />
         <activity android:name=".NewsDetailActivity" />
-        <activity
-            android:name=".ui.prueba.NewsDetailActivity"
-            tools:ignore="MissingClass" />
+
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
