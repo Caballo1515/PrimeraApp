@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class ArticlesDetailActivity extends AppCompatActivity {
 
     Bundle datos;
     ImageView imagen;
-    TextView titulo, fecha, texto;
+    TextView titulo, fecha, texto, autor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +24,10 @@ public class ArticlesDetailActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        autor = findViewById(R.id.AutorArticles);
+        autor.setText(datos.getString("autor"));
         imagen = findViewById(R.id.imagenArticles);
-        imagen.setImageResource(R.drawable.image1);
+        Picasso.get().load(datos.getString("foto")).into(imagen);
         titulo = findViewById(R.id.tituloArticles);
         titulo.setText(datos.getString("titulo"));
         texto = findViewById(R.id.textoArticles);

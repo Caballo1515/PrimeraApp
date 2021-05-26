@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import cat.urv.deim.asm.dev_comm.AdapterArticulos;
 import cat.urv.deim.asm.dev_comm.AdapterListasNAE;
 import cat.urv.deim.asm.dev_comm.ArticlesDetailActivity;
 import cat.urv.deim.asm.dev_comm.ItempNAE;
@@ -56,8 +57,9 @@ public class ArticlesFragment extends Fragment {
         */
 
 
-        AdapterListasNAE adaptador= new AdapterListasNAE(lista, ArticlesDetailActivity.class);
-        recycler.setAdapter(adaptador);
+        //AdapterListasNAE adaptador= new AdapterListasNAE(lista, ArticlesDetailActivity.class);
+        AdapterArticulos adapterArticulos = new AdapterArticulos(articles, ArticlesDetailActivity.class);
+        recycler.setAdapter(adapterArticulos);
 
 
         return view;

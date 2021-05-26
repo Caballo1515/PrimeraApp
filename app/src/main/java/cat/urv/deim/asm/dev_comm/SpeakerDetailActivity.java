@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class SpeakerDetailActivity extends AppCompatActivity {
 
     Bundle datos;
@@ -23,13 +25,13 @@ public class SpeakerDetailActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         imagen = findViewById(R.id.imagenSpeaker);
-        imagen.setImageResource(R.drawable.image1);
+        Picasso.get().load(datos.getString("foto")).into(imagen);
         titulo = findViewById(R.id.tituloSpeaker);
         titulo.setText(datos.getString("titulo"));
         texto = findViewById(R.id.textoSpeaker);
         texto.setText(datos.getString("texto"));
         fecha = findViewById(R.id.fechaSpeaker);
-        fecha.setText(datos.getString("fecha"));
+        fecha.setText(datos.getString("tecnologias"));
 
     }
 }

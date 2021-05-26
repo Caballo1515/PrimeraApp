@@ -6,48 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".ArticlesDetailActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imagenArticles"
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            tools:srcCompat="@tools:sample/avatars" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imagenArticles"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tituloArticles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="TextView"
+                    android:textSize="20sp"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/fechaArticles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/tituloArticles"
+                android:id="@+id/AutorArticles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/fechaArticles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/textoArticles"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
                 android:layout_weight="1"
                 android:text="TextView" />
         </LinearLayout>
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/textoArticles"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="TextView" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
