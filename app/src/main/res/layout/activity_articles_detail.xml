@@ -11,8 +11,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,8 +25,28 @@
             <ImageView
                 android:id="@+id/imagenArticles"
                 android:layout_width="match_parent"
-                android:layout_height="240dp"
+                android:layout_height="259dp"
                 tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="187dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+
+                <ImageButton
+                    android:id="@+id/share1"
+                    android:layout_width="182dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/ic_baseline_share_24" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,6 +91,7 @@
                 android:layout_margin="20dp"
                 android:layout_weight="1"
                 android:text="TextView" />
+
         </LinearLayout>
     </ScrollView>
 

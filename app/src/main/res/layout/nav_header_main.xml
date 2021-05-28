@@ -11,17 +11,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="65dp"
-        android:layout_height="150dp"
+        android:layout_width="82dp"
+        android:layout_height="149dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/image1" />
-
-    <TextView
-        android:layout_width="221dp"
-        android:layout_height="123dp"
-        android:text="DEV COMMUNITY"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
 </LinearLayout>

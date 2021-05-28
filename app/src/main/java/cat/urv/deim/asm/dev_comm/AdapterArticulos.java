@@ -98,4 +98,6 @@ public class AdapterArticulos extends RecyclerView.Adapter<AdapterArticulos.View
         }
 
     }
+
+
 }
