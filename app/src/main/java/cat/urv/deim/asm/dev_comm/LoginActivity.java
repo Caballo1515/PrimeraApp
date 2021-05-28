@@ -7,6 +7,7 @@ import androidx.security.crypto.MasterKeys;
 
 import android.app.AlertDialog;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,6 +20,8 @@ import android.widget.Button;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.concurrent.Executors;
+
 
 import cat.urv.deim.asm.libraries.usercommdev.utils.UserUtils;
 
@@ -33,11 +36,25 @@ public class LoginActivity extends AppCompatActivity {
 
     private AlertDialog alertaLogin, alertaCondici;
     private Switch conditions;
+    private String token;
+    private boolean usuarioValido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                token = UserUtils.getToken(getApplicationContext(),"tomas.gonzalez@urv.cat", "asmlab" );
+                System.out.println(UserUtils.getToken(getApplicationContext(),"tomas.gonzalez@urv.cat", "asmlab" ));
+            }
+        });
+
+        System.out.println(token);
+
+        System.out.println(UserUtils.getToken(getApplicationContext(),"tomas.gonzalez@urv.cat", "asmlab" ));
         masterKeyAlias = null;
         try {
             masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC);
@@ -56,8 +73,7 @@ public class LoginActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(this.sharedPreferences.getString("nombre", "").equals("Tomas")
-                && this.sharedPreferences.getString("pass", "").equals("asm")){
+        if(this.sharedPreferences.getBoolean("valido", false)){
             Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
             startActivity(intent);
         }
@@ -73,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
         alerta_condici.setMessage("No has aceptado las condiciones");
         alertaCondici=alerta_condici.create();
         conditions = this.findViewById(R.id.switch1);
-
+        usuarioValido=false;
 
 
     }
@@ -104,13 +120,21 @@ public class LoginActivity extends AppCompatActivity {
         Button log = this.findViewById(R.id.button);
         log.setOnClickListener(v -> {
 
+
             if(conditions.isChecked()){
-               if(name.getText().toString().equals("Tomas") && pass.getText().toString().equals("asm")){
+                try {
+                    validacion(getApplicationContext(), name.getText().toString(), pass.getText().toString());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(usuarioValido){
                    editor = sharedPreferences.edit();
                    editor.putString("nombre", name.getText().toString());
                    editor.putString("pass", pass.getText().toString());
+                   editor.putBoolean("valido", true);
                    editor.apply();
                    Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                   intent.putExtra("token", token);
                    startActivity(intent);
                }else{
                    alertaLogin.show();
@@ -120,6 +144,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void validacion(Context context, String email, String pass) throws InterruptedException {
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                usuarioValido = UserUtils.validateUserCredentials(context, email, pass);
+            }
+        });
+        Thread.sleep(10);
     }
 
 }
